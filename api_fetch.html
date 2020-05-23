@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>fetch api internally</title>
+    </head>
+    <body>
+        <img src="" id="desert">
+    <script>
+        console.log('fectching api internally');
+        
+//        catchimage(){
+//            .then(response => {
+//                console.log('done!');
+//            })
+//        }
+//        .catch(error => {
+//            console.log('error!');
+//            console.error(error);
+//        });
+        
+        async function catchimage(){
+            const response = await fetch('Desert.jpg');
+            const blob = await response.blob
+            document.getElementById('desert').src=URL.createObjectURL(blob)
+        }
+        </script>
+    </body>
+</html>
